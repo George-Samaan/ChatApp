@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">ChatApp</string>
+    <string name="supervised_by_maohamed_nabil">Supervised by Maohamed Nabil</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="welcome">Welcome Back!</string>
+    <string name="forgot_password">Forgot password!</string>
+    <string name="login">Create Account</string>
+    <string name="or_create_new_account">Or create new account</string>
+    <string name="logininside">Login</string>
+
+    <string-array name="rooms_fragments_titles">
+        <item>MyRoomsFragment</item>
+        <item>AllRoomsFragment</item>
+    </string-array>
+</resources>
