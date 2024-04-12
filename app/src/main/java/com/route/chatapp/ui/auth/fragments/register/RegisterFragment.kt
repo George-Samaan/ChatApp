@@ -1,13 +1,15 @@
 package com.route.chatapp.ui.auth.fragments.register
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.findNavController
 import com.route.chatapp.R
 import com.route.chatapp.base.BaseFragment
 import com.route.chatapp.database.User
 import com.route.chatapp.databinding.FragmentRegisterBinding
+import com.route.chatapp.ui.Constants
+import com.route.chatapp.ui.home.HomeActivity
 
 
 class RegisterFragment : BaseFragment<FragmentRegisterBinding, RegisterViewModel>() {
@@ -39,14 +41,14 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding, RegisterViewModel
     }
 
     private fun navigateToHome(user: User) {
-        val action =
-            RegisterFragmentDirections
-                .actionRegiisterFragmentToHomeFragment(
-                    user
-                )
-        findNavController().navigate(
-            action
+        startActivity(
+            Intent(
+                requireActivity(),
+                HomeActivity::class.java
+            )
+                .putExtra(Constants.PASSED_USER, user)
         )
+        requireActivity().finish()
     }
 
 

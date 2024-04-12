@@ -1,25 +1,26 @@
 package com.route.chatapp.ui.auth
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.route.chatapp.R
+import com.route.chatapp.base.BaseActivity
 import com.route.chatapp.databinding.ActivityAuthBinding
 
-class MainActivity : AppCompatActivity() {
+class AuthActivity : BaseActivity<ActivityAuthBinding, AuthViewModel>() {
 
-    private var _binding: ActivityAuthBinding? = null
-    private val binding: ActivityAuthBinding get() = _binding!!
 
     lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        _binding = ActivityAuthBinding.inflate(layoutInflater)
-        setContentView(binding.root)
         initNavComponents()
     }
+
+    override fun initViewModel() = ViewModelProvider(this)[AuthViewModel::class.java]
+
+    override fun getLayoutId(): Int = R.layout.activity_auth
 
     private fun initNavComponents() {
         val navHostFragment = supportFragmentManager.findFragmentById(
@@ -28,8 +29,4 @@ class MainActivity : AppCompatActivity() {
         navController = navHostFragment.navController
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        _binding = null
-    }
 }

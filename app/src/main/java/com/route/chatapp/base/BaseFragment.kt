@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
-import com.route.todo.ui.home.showDialog
+import com.route.todo.ui.home.Extensions.showDialog
 
 abstract class BaseFragment<VB : ViewBinding,
         VM : BaseViewModel> : Fragment() {

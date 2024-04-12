@@ -68,12 +68,25 @@ class LoginViewModel : BaseViewModel() {
         if (passwordLiveData.value.isNullOrBlank()) {
             errorPassword.value = "Please Enter Your Password"
             isValid = false
-        } else if (passwordLiveData.value!!.length < 6) {
+        } else if (passwordLiveData.value?.length!! < 6) {
             errorPassword.value = "Password is WRONG "
+            isValid = false
         } else {
             errorPassword.value = null
         }
         return isValid
+    }
+
+    fun checkUserLoggedIn() {
+        val user = Firebase.auth.currentUser ?: return
+        events.value = LoginViewEvent
+            .NavigateToHome(
+                User(
+                    user.uid,
+                    user.displayName,
+                    user.email
+                )
+            )
     }
 
 

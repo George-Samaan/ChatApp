@@ -12,27 +12,10 @@
         <action
             android:id="@+id/action_loginFragment_to_regiisterFragment"
             app:destination="@id/regiisterFragment" />
-        <action
-            android:id="@+id/action_loginFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/regiisterFragment"
         android:name="com.route.chatapp.ui.auth.fragments.register.RegisterFragment"
         android:label="fragment_regiister"
-        tools:layout="@layout/fragment_register">
-        <action
-            android:id="@+id/action_regiisterFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.route.chatapp.ui.home.HomeFragment"
-        android:label="activity_home"
-        tools:layout="@layout/activity_home">
-
-        <argument
-            android:name="user"
-            app:argType="com.route.chatapp.database.User" />
-    </fragment>
+        tools:layout="@layout/fragment_register" />
 </navigation>

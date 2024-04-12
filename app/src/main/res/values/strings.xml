@@ -13,4 +13,10 @@
         <item>MyRoomsFragment</item>
         <item>AllRoomsFragment</item>
     </string-array>
+
+
+    <plurals name="members_count">
+        <item quantity="one">%d Member</item>
+        <item quantity="other">%d Members</item>
+    </plurals>
 </resources>
