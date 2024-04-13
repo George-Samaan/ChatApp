@@ -9,7 +9,6 @@ import com.route.chatapp.base.BaseActivity
 import com.route.chatapp.databinding.ActivityHomeBinding
 import com.route.chatapp.ui.createroom.RoomCreationActivity
 import com.route.chatapp.ui.home.adapter.RoomsViewPagerAdapter
-import com.route.chatapp.ui.roomdetails.RoomDetailsActivity
 
 class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>() {
 
@@ -36,10 +35,6 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>() {
                 resources?.getStringArray(R.array.rooms_fragments_titles) ?: emptyArray()
             tab.text = tabTitles[position]
         }.attach()
-    }
-
-    private fun navigateToRoomDetails() {
-        startActivity(Intent(this, RoomDetailsActivity::class.java))
     }
 
 

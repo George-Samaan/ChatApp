@@ -36,6 +36,11 @@ class RoomsRecyclerViewAdapter(private var roomsList: List<Room>?) :
         onRoomClickListener = listener
     }
 
+    fun updateRooms(roomsList: List<Room>?) {
+        this.roomsList = roomsList
+        notifyItemRangeInserted(0, roomsList?.size ?: 0)
+    }
+
     fun interface OnRoomClickListener {
         fun onRoomClicked(room: Room)
     }

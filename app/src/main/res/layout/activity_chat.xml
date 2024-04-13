@@ -74,6 +74,8 @@
                     android:id="@+id/messages_rv"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_sent_message"
                     app:layout_constraintBottom_toTopOf="@id/send_mssg_btn"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -85,6 +87,7 @@
                     android:background="@drawable/shape_message_edittext_bg"
                     android:hint="Type a messasge ..."
                     android:paddingHorizontal="4dp"
+                    android:text="@={vm.messageContent}"
                     android:paddingVertical="7dp"
                     app:layout_constraintBottom_toBottomOf="@id/send_mssg_btn"
                     app:layout_constraintEnd_toStartOf="@id/send_mssg_btn"
@@ -102,6 +105,7 @@
                     android:paddingHorizontal="20dp"
                     android:paddingVertical="4dp"
                     android:text="Send"
+                    android:onClick="@{()-> vm.sendMessage(room)}"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"

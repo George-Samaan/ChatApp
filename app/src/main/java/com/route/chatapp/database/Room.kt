@@ -19,5 +19,6 @@ data class Room(
 
     companion object {
         const val uidField = "uid"
+        const val ownerIdField = "ownerId"
     }
 }
